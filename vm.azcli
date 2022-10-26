@@ -6,4 +6,4 @@ az network vnet subnet create --name db --resource-group activity1 --vnet-name n
 az network nsg create --name nsg1 -g activity1 -l eastus 
 az network nsg rule create --name appnsg --nsg-name nsg1 --resource-group activity1 --priority 500 --access Allow --source-port-ranges 22 --protocol Tcp --direction Inbound --source-address-prefixes * 
 az network nsg rule create --name dbnsg --nsg-name nsg1 --resource-group activity1 --priority 510 --access Allow --source-port-ranges 80  --protocol Tcp --direction Inbound --source-address-prefixes * 
-az vm create --name vm1 -g activity1 --image UbuntuLTS --vnet-name net1 --subnet web --size Standard_B1s --public-ip-address vmpub --public-ip-sku Standard --public-ip-address-allocation dynamic --public-ip-sku Standard --nsg nsg1 --location eastus --admin-username devops --admin-password Motherindia@123 --authentication-type password
+az vm create --name vm1 -g activity1 --image UbuntuLTS --vnet-name net1 --subnet web --size Standard_B1s --public-ip-sku Standard --nsg nsg1 --location eastus --admin-username devops --admin-password Motherindia@123 --authentication-type password
